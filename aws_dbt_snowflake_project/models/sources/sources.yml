@@ -1,0 +1,8 @@
+sources:
+  - name: bronze
+    database: DB_SALES  
+    schema: bronze  
+    tables:
+      - name: orders
+      - name: customers
+      - name: products

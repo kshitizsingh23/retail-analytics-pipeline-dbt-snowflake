@@ -1,0 +1,16 @@
+# dbt folders
+logs/
+target/
+dbt_packages/
+
+# sensitive files
+profiles.yml
+.env
+
+# logs
+*.log
+
+# system files
+.DS_Store
+__pycache__/
+*.pyc

@@ -1,0 +1,68 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: "This table contains customer information."
+
+    columns:
+      - name: customer_key
+        tests:
+          - unique
+          - not_null
+
+      - name: first_name
+        tests:
+          - not_null
+
+      - name: last_name
+        tests:
+          - not_null
+
+      - name: email
+        tests:
+          - not_null
+
+
+  - name: dim_products
+    description: "This table contains product information."
+
+    columns:
+      - name: product_key
+        tests:
+          - unique
+          - not_null
+
+      - name: product_name
+        tests:
+          - not_null
+
+      - name: supplier_id
+        tests:
+          - not_null
+
+
+  - name: fact_orders
+    description: "This table contains order information."
+
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+
+      - name: customer_key
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customers')
+              field: customer_key
+
+      - name: product_key
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_products')
+              field: product_key
+
+      - name: order_date
+        tests:
+          - not_null

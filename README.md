@@ -27,6 +27,12 @@ Star Schema (Gold Layer)
 
 ---
 
+## 🔄 Data Lineage
+
+![Data Lineage](images/lineage.png)
+
+---
+
 ## 📂 Data Sources
 
 Raw data stored in AWS S3:

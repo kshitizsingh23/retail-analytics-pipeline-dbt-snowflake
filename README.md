@@ -153,13 +153,17 @@ models:
 │   ├── bronze/
 │   ├── silver/
 │   ├── gold/
-│
 ├── snapshots/
 ├── tests/
 ├── macros/
+├── analyses/
+├── seeds/
 ├── dbt_project.yml
 ├── profiles.yml
-└── README.md
+├── packages.yml
+├── package-lock.yml
+├── user.yml
+├── .gitignore
 ```
 
 ---

@@ -29,7 +29,7 @@ Star Schema (Gold Layer)
 
 ## 🔄 Data Lineage
 
-![Data Lineage](images/lineage.png)
+![Data Lineage](images/data_lineage.png)
 
 ---
 

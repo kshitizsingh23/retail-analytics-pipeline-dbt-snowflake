@@ -53,11 +53,6 @@ Raw data stored in AWS S3:
 
 * Data ingested from S3 into Snowflake
 * No transformations applied
-* Tables:
-
-  * `raw_orders`
-  * `raw_customers`
-  * `raw_products`
 
 ---
 
@@ -76,8 +71,11 @@ Raw data stored in AWS S3:
 * order_id
 * customer_key (FK)
 * product_key (FK)
-* order_date
+* quantity
+* unit_price
+* discount_amount
 * total_amount
+* status
 
 #### 📐 Dimension Tables
 
@@ -85,16 +83,27 @@ Raw data stored in AWS S3:
 
 * customer_key (Surrogate Key)
 * customer_id (Business Key)
-* effective_from
-* effective_to
-* is_current
+* first_name
+* last_name
+* email
+* region
+* customer_segment
+* created_at
+* valid_from
+* valid_to
 
 **dim_products**
 
 * product_key (Surrogate Key)
 * product_id
 * product_name
+* unit_price
 * category
+* supplier_id
+* sub_category
+* status
+* valid_from
+* valid_to
 
 ---
 
@@ -109,10 +118,9 @@ Raw data stored in AWS S3:
 
 ## 🔄 Snapshots
 
-Used dbt snapshots to track changes in customer data over time.
+Used dbt snapshots to track changes in customer and product data over time.
 
-* Strategy: timestamp
-* Unique Key: customer_id
+* Strategy: check
 * Tracks historical changes automatically
 
 ---
@@ -173,8 +181,8 @@ models:
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/aws-snowflake-dbt-project.git
-cd aws-snowflake-dbt-project
+git clone https://github.com/your-username/aws-dbt-snowflake-project.git
+cd aws-dbt-snowflake-project
 ```
 
 ---
@@ -222,7 +230,7 @@ dbt test
 
 * Add orchestration using Airflow
 * Build dashboards in Power BI / Tableau
-* Implement advanced dbt tests (relationships, accepted values)
+* Implement advanced dbt tests (accepted values)
 * Add documentation using dbt docs
 
 ---
@@ -237,15 +245,15 @@ dbt test
 
 ---
 
-## 🤝 Contributing
-
-Feel free to fork the repo and submit pull requests.
+## 👤 Author
+Kshitiz Singh
 
 ---
 
 ## 📬 Contact
 
-Connect with me on LinkedIn for collaboration or queries.
+- LinkedIn: https://www.linkedin.com/in/kshitiz-singh-317a9420a/
+- Email: kshitizsingh5@gmail.com
 
 ---
 
